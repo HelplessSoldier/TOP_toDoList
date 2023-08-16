@@ -19,22 +19,26 @@ function openNewItemDialogue( parent, array ) {
 
     const submitButton = createElement('button', { id: 'submitButton' }, 'Submit');
     submitButton.addEventListener('click', () => {
-        createNewTodoItem(
-            array, 
-            titleInput.value, 
-            descriptionInput.value, 
-            dueDateInput.value, 
-            priorityInput.value
-        );
-        renderTodoItems(array, parent);
-
-        titleInput.value = '';
-        descriptionInput.value = '';
-        dueDateInput.value = '';
-        priorityInput.value = '';
-    })
-
+        if (titleInput.value && descriptionInput.value && dueDateInput.value && priorityInput.value){
+            createNewTodoItem(
+                array, 
+                titleInput.value, 
+                descriptionInput.value, 
+                dueDateInput.value, 
+                priorityInput.value
+            );
+            renderTodoItems( parent, array);
+            titleInput.value = '';
+            descriptionInput.value = '';
+            dueDateInput.value = '';
+            priorityInput.value = '';
+        };
+    });
+            
     const closeButton = createElement('button', { id: 'closeButton' }, 'Close');
+    closeButton.addEventListener('click', () => {
+        newItemDialogueContainer.remove();
+    });
 
     newItemDialogueContainer.append(
         titleInputLabel,

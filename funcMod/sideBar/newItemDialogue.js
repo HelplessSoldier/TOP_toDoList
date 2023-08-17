@@ -46,9 +46,20 @@ function openNewItemDialogue( todoParent, parent, array, newItemButton ) {
     // submit button
     const submitButton = createElement('button', { id: 'submitButton' }, 'Submit');
     submitButton.addEventListener('click', () => {
-        if (titleInput.value && descriptionInput.value && dueDateInput.value) {
+
+        const currentDate = new Date();
+        const formattedCurrentDate = currentDate.toISOString().split('T')[0];
+
+        // all entry fields must be filled and valid date
+        if (
+            titleInput.value && 
+            descriptionInput.value && 
+            dueDateInput.value && 
+            dueDateInput.value >= formattedCurrentDate
+        ) {
+
+        // create correct string for the radio button selected
             let priorityValue;
-    
             if (priorityInputHigh.checked) {
                 priorityValue = "Priority: High";
             } else if (priorityInputMed.checked) {
@@ -69,10 +80,10 @@ function openNewItemDialogue( todoParent, parent, array, newItemButton ) {
                 removeChildren(todoParent);
                 renderTodoItems(todoParent, array);
 
+                // clear input fields
                 titleInput.value = '';
                 descriptionInput.value = '';
                 dueDateInput.value = '';
-    
                 priorityInputHigh.checked = false;
                 priorityInputMed.checked = false;
                 priorityInputLow.checked = false;

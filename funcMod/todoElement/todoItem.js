@@ -6,6 +6,7 @@ class TodoItem {
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
+        this.id = Date.now();
     }
 
     changeTitle( newTitle ) {
@@ -34,6 +35,10 @@ class TodoItem {
 
         const removeButton = createElement('button', { class: 'removeButton' }, 'Remove');
         removeButton.addEventListener('click', () => {
+            const removeEvent = new CustomEvent('removeTodoItem', {
+                detail: this.id
+            })
+            window.dispatchEvent(removeEvent);
             todoElement.remove();
         })
 

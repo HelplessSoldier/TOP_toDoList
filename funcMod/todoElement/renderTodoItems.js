@@ -1,5 +1,6 @@
 function renderTodoItems( parent, array ) {
-    for(let element of array) {
+    for(let item of array) {
+        const element = item.createTodoElement();
         parent.append(element);
     }
 }

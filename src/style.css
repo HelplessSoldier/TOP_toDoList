@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@500&family=Roboto:ital,wght@0,400;1,100&family=VT323&display=swap');
+
+:root {
+    --text-color: #dcefe9;
+    --background-color: #10231d;
+    --primary-color: #8f4259;
+    --secondary-color: #163129;
+    --accent-color: #b55e78;
+}
+
+
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+}
+
+button {
+    color: var(--text-color);
+    font-family: "Roboto", sans-serif;
+    font-size: large;
+    letter-spacing: 2px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary-color);
+}
+
+button:hover {
+    cursor: pointer;
+    background: var(--accent-color);
+}
+
+#content {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    grid-template-rows: 1fr 6fr 4fr;
+    background-color: var(--secondary-color);
+}
+
+
+#menuItemButton {
+    grid-column: 1;
+    height: 70%;
+}
+
+#sideBarContainer {
+    color: var(--text-color);
+    font-family: "Roboto", sans-serif;
+    font-size: large;
+    font-weight: 600;
+    grid-row: 1;
+    grid-column: 1 / span 3;
+    display: grid;
+    grid-template-columns: 1fr 6fr 4fr;
+    background-color: var(--background-color);
+    padding: 10px;
+    gap: 10px;
+    border-bottom: 5px solid var(--accent-color);
+}
+
+#newItemDialogueContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#todoContainer {
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.todoElement {
+    flex: 1 1 calc(20% - 10px);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 5px solid var(--accent-color);
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.todoElement > button {
+    margin-bottom: 20px;
+}
+
+#priorityInputContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+/* * {
+    border: 1px solid orange;
+} */

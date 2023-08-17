@@ -1,11 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@500&family=Roboto:ital,wght@0,400;1,100&family=VT323&display=swap');
 
-:root {
+
+/* green and pink colors */
+/* :root {
     --text-color: #dcefe9;
     --background-color: #10231d;
     --primary-color: #8f4259;
     --secondary-color: #163129;
     --accent-color: #b55e78;
+} */
+
+:root {
+    --text-color: #f8f1f5;
+    --background-color: #070305;
+    --primary-color: #a5d5bd;
+    --secondary-color: #180b12;
+    --accent-color: #4da379;
 }
 
 
@@ -17,7 +27,7 @@ body {
 }
 
 button {
-    color: var(--text-color);
+    color: black;
     font-family: "Roboto", sans-serif;
     font-size: large;
     letter-spacing: 2px;
@@ -194,6 +204,10 @@ input[type="radio"]:checked {
     margin-top: 10px;
     margin-bottom: 10px;
     gap: 10px;
+}
+
+.buttonContainer {
+    margin-bottom: 10px;
 }
 
 /* * {

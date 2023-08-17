@@ -35,3 +35,5 @@ window.addEventListener('removeTodoItem', (e) => {
     updateLocalStorage(todoArray);
     renderTodoItems(todoContainer, todoArray);
 })
+
+// TODO: allow for editing the title, description, due date, and priority of a todo item

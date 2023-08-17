@@ -2,6 +2,7 @@ import { createElement } from "../createElement";
 import createNewTodoItem from "../todoElement/newTodoItem";
 import renderTodoItems from "../todoElement/renderTodoItems";
 import { removeChildren } from "../clearParent";
+import { updateLocalStorage } from "../updateLocalStorage";
 
 function openNewItemDialogue( todoParent, parent, array ) {
     const newItemDialogueContainer = createElement('div', { id: 'newItemDialogueContainer' }, '');

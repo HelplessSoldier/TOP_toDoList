@@ -1,6 +1,5 @@
 import { createElement } from "../createElement";
 import openNewItemDialogue from "./newItemDialogue";
-import { removeChildren } from "../clearParent";
 
 function renderSideBar( todoParent, parent, array ) {
     const sideBarContainer = createElement('div', { id: 'sideBarContainer' }, '');

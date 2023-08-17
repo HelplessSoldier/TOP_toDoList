@@ -2,9 +2,8 @@ import { createElement } from "../createElement";
 import createNewTodoItem from "../todoElement/newTodoItem";
 import renderTodoItems from "../todoElement/renderTodoItems";
 import { removeChildren } from "../clearParent";
-import { updateLocalStorage } from "../updateLocalStorage";
 
-function openNewItemDialogue( todoParent, parent, array ) {
+function openNewItemDialogue( todoParent, parent, array, newItemButton ) {
     const newItemDialogueContainer = createElement('div', { id: 'newItemDialogueContainer' }, '');
 
     // title input field
@@ -84,6 +83,7 @@ function openNewItemDialogue( todoParent, parent, array ) {
     // close button
     const closeButton = createElement('button', { id: 'closeButton' }, 'Close');
     closeButton.addEventListener('click', () => {
+        newItemButton.style.display = 'block';
         newItemDialogueContainer.remove();
     });
 

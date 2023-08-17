@@ -113,7 +113,7 @@ input[type="radio"]:checked {
     grid-row: 1;
     grid-column: 1 / span 3;
     display: grid;
-    grid-template-columns: 1fr 6fr 4fr;
+    grid-template-columns: repeat(10, 1fr);
     background-color: var(--background-color);
     padding: 10px;
     gap: 10px;
@@ -127,6 +127,7 @@ input[type="radio"]:checked {
     gap: 10px;
     justify-content: center;
     align-items: center;
+    grid-column: 1 / span 10;
 }
 
 #todoContainer {
@@ -138,6 +139,11 @@ input[type="radio"]:checked {
     overflow: auto;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+#titleInput,
+#descriptionInput {
+    width: 80%;
 }
 
 .todoElement {

@@ -6,7 +6,9 @@ import { removeChildren } from "../funcMod/clearParent";
 import { getTodoArrayFromLocalStorage } from "../funcMod/getTodoArrayFromLocalStorage";
 import { updateLocalStorage } from "../funcMod/updateLocalStorage";
 import  "./style.css";
+import { editItemDialogue } from "../funcMod/editItemDialogue";
 
+const editPopup = document.getElementById('editOverlay');
 const rootElement = document.getElementById('content');
 const todoContainer = createElement('div', { id: 'todoContainer' }, '');
 rootElement.append(todoContainer);
@@ -36,4 +38,15 @@ window.addEventListener('removeTodoItem', (e) => {
     renderTodoItems(todoContainer, todoArray);
 })
 
-// TODO: allow for editing the title, description, due date, and priority of a todo item
+// open edit item dialogue when edit button is pressed
+window.addEventListener('editTodoItem', (e) => {
+    let selectedItem = e.detail;
+    let itemToEdit;
+    for (let item of todoArray) {
+        if (item.id === selectedItem.id) {
+            itemToEdit = item;
+            break;
+        }
+    }
+    editItemDialogue( itemToEdit, editPopup );
+})

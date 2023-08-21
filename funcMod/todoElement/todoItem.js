@@ -33,6 +33,7 @@ class TodoItem {
         const dueDate = createElement('p', { class: 'todoDueDate' }, `Due Date: ${this.dueDate}`);
         const priority = createElement('p', { class: 'todoPriority' }, this.priority);
 
+        const buttonContainer = createElement('div', { class: 'buttonContainer' }, '');
         const removeButton = createElement('button', { class: 'removeButton' }, 'Remove');
         removeButton.addEventListener('click', () => {
             const removeEvent = new CustomEvent('removeTodoItem', {
@@ -42,7 +43,16 @@ class TodoItem {
             todoElement.remove();
         })
 
-        todoElement.append(title, description, dueDate, priority, removeButton);
+        const editButton = createElement('button', { class: 'editButton' }, 'Edit');
+        editButton.addEventListener('click', () => {
+            const editEvent = new CustomEvent('editTodoItem', {
+                detail: this
+            })
+            window.dispatchEvent(editEvent);
+        })
+        buttonContainer.append(removeButton, editButton);
+
+        todoElement.append(title, description, dueDate, priority, buttonContainer);
         return todoElement;
     }
 }

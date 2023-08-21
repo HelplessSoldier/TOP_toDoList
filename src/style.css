@@ -18,6 +18,23 @@
     --accent-color: #4da379;
 }
 
+#editOverlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--background-color);
+    padding: 20px;
+    box-shadow: 0px 0px 10px var(--accent-color);
+    z-index: 1001;
+}
+
 
 body {
     height: 100vh;

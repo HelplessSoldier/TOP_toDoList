@@ -73,6 +73,8 @@ export function editItemDialogue( item, editItemParent ) {
         editPriorityInputHigh.checked = false;
         editPriorityInputMed.checked = false;
         editPriorityInputLow.checked = false;
+        const updateEvent = new CustomEvent('updateEvent');
+        window.dispatchEvent(updateEvent);
     })
 
     const editCloseButton = createElement('button', { class: 'editButton' }, 'Close');

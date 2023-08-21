@@ -5,8 +5,8 @@ import { createElement } from "../funcMod/createElement";
 import { removeChildren } from "../funcMod/clearParent";
 import { getTodoArrayFromLocalStorage } from "../funcMod/getTodoArrayFromLocalStorage";
 import { updateLocalStorage } from "../funcMod/updateLocalStorage";
-import  "./style.css";
 import { editItemDialogue } from "../funcMod/editItemDialogue";
+import  "./style.css";
 
 const editPopup = document.getElementById('editOverlay');
 const rootElement = document.getElementById('content');
@@ -49,4 +49,11 @@ window.addEventListener('editTodoItem', (e) => {
         }
     }
     editItemDialogue( itemToEdit, editPopup );
+})
+
+// update todo items when requested
+window.addEventListener('updateEvent', () => {
+    removeChildren(todoContainer);
+    updateLocalStorage(todoArray);
+    renderTodoItems(todoContainer, todoArray);
 })

@@ -1,12 +1,12 @@
 import { createElement } from "../createElement";
 
 class TodoItem {
-    constructor(title, description, dueDate, priority){
+    constructor(title, description, dueDate, priority, id){
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
-        this.id = Date.now();
+        this.id = id || Date.now();
     }
 
     changeTitle( newTitle ) {
@@ -46,7 +46,7 @@ class TodoItem {
         const editButton = createElement('button', { class: 'editButton' }, 'Edit');
         editButton.addEventListener('click', () => {
             const editEvent = new CustomEvent('editTodoItem', {
-                detail: this
+                detail: this.id
             })
             window.dispatchEvent(editEvent);
         })

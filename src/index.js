@@ -17,7 +17,7 @@ rootElement.append(todoContainer);
 let todoArrayJson = getTodoArrayFromLocalStorage();
 let todoArray = [];
 for (let item of todoArrayJson) {
-    todoArray.push(new TodoItem(item.title, item.description, item.dueDate, item.priority));
+    todoArray.push(new TodoItem(item.title, item.description, item.dueDate, item.priority, item.id));
 }
 
 // place everything on screen
@@ -43,8 +43,9 @@ window.addEventListener('editTodoItem', (e) => {
     let selectedItem = e.detail;
     let itemToEdit;
     for (let item of todoArray) {
-        if (item.id === selectedItem.id) {
+        if (item.id === selectedItem) {
             itemToEdit = item;
+            console.log(itemToEdit)
             break;
         }
     }

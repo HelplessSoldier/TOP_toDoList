@@ -1,8 +1,8 @@
 import TodoItem from "./todoItem"
 import { updateLocalStorage } from "../updateLocalStorage";
 
-function createNewTodoItem( array, title, description, dueDate, priority ) {
-    const item = new TodoItem(title, description, dueDate, priority);
+function createNewTodoItem( array, title, description, dueDate, priority, id ) {
+    const item = new TodoItem(title, description, dueDate, priority, id);
     array.push(item);
     updateLocalStorage(array);
 }

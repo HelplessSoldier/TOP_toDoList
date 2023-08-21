@@ -5,27 +5,27 @@ export function editItemDialogue( item, editItemParent ) {
     removeChildren( editItemParent );
 
     const titleContainer = createElement('div', { id: 'editTitleContainer' }, '');
-    const titleInputLabel = createElement('label', { for: 'editTitleInput' }, 'Title');
+    const titleInputLabel = createElement('label', { for: 'editTitleInput', class: 'editLabel' }, 'Title: ');
     const titleInput = createElement('input', { type: 'text', id: 'editTitleInput'}, '');
     titleContainer.append(titleInputLabel, titleInput)
 
     const descriptionContainer = createElement('div', { id: 'editDescriptionContainer' }, '');
-    const descriptionInputLabel = createElement('label', { for: 'editDescriptionInput' }, 'Description');
+    const descriptionInputLabel = createElement('label', { for: 'editDescriptionInput', class: 'editLabel' }, 'Description: ');
     const descriptionInput = createElement('input', { type: 'text', id: 'editDescriptionInput'}, '');
     descriptionContainer.append(descriptionInputLabel, descriptionInput)
 
     const editDueDateContainer = createElement('div', { id: 'editDueDateContainer' }, '');
-    const editDueDateInputLabel = createElement('label', { for: 'editDueDateInput' }, 'Due Date');
+    const editDueDateInputLabel = createElement('label', { for: 'editDueDateInput', class: 'editLabel' }, 'Due Date: ');
     const editDueDateInput = createElement('input', { type: 'date', id: 'editDueDateInput'}, '');
     editDueDateContainer.append(editDueDateInputLabel, editDueDateInput)
 
     const editPriorityInputContainer = createElement('div', { id: 'editPriorityInputContainer' }, '');
-    const editPriorityInputLabel = createElement('label', { for: 'editPriorityInput' }, 'Priority: ');
-    const editPriHighLabel = createElement('label', { for: 'editPriorityInputHigh' }, 'High:');
+    const editPriorityInputLabel = createElement('label', { for: 'editPriorityInput', class: 'editLabel'}, 'Priority:');
+    const editPriHighLabel = createElement('label', { for: 'editPriorityInputHigh' }, 'High: ');
     const editPriorityInputHigh = createElement('input', { id: 'editPriorityInputHigh', type: 'radio', name: 'priority' });
-    const editPriMidLabel = createElement('label', { for: 'editPriorityInputMid' }, 'Medium:');
+    const editPriMidLabel = createElement('label', { for: 'editPriorityInputMid' }, 'Medium: ');
     const editPriorityInputMed = createElement('input', { id: 'editPriorityInputMed', type: 'radio', name: 'priority' });
-    const editPriLowLabel = createElement('label', { for: 'editPriorityInputLow' }, 'Low:');
+    const editPriLowLabel = createElement('label', { for: 'editPriorityInputLow' }, 'Low: ');
     const editPriorityInputLow = createElement('input', { id: 'editPriorityInputLow', type: 'radio', name: 'priority' });
     editPriorityInputContainer.append(
         editPriorityInputLabel, 
@@ -37,7 +37,7 @@ export function editItemDialogue( item, editItemParent ) {
         editPriorityInputLow
         );
 
-    const editButtonContainer = createElement('div', { class: 'buttonContainer' }, '');
+    const editButtonContainer = createElement('div', { class: 'editButtonContainer' }, '');
 
     // apply all inputs to the item, then close popup
     const editSubmitButton = createElement('button', { class: 'editButton' }, 'Submit');

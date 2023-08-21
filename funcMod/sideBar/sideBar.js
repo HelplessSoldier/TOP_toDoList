@@ -4,7 +4,7 @@ import { updateLocalStorage } from "../updateLocalStorage";
 import renderTodoItems from "../todoElement/renderTodoItems";
 import { removeChildren } from "../clearParent";
 
-function renderSideBar( todoParent, parent, array ) {
+function renderTopBar( todoParent, parent, array ) {
     const sideBarContainer = createElement('div', { id: 'sideBarContainer' }, '');
 
     const newItemButton = createElement('button', { id: 'newItemButton' }, 'New Task');
@@ -44,4 +44,4 @@ function renderSideBar( todoParent, parent, array ) {
     parent.append(sideBarContainer);
 }
 
-export default renderSideBar;
+export default renderTopBar;

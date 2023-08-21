@@ -19,10 +19,10 @@
 }
 
 #editOverlay {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
     align-items: center;
+    justify-content: center;
     color: white;
     display: none;
     position: absolute;
@@ -31,10 +31,46 @@
     transform: translate(-50%, -50%);
     background-color: var(--background-color);
     padding: 20px;
-    box-shadow: 0px 0px 10px var(--accent-color);
+    border: 10px solid var(--accent-color);
     z-index: 1001;
 }
 
+.editLabel {
+    margin-right: 10px;
+}
+
+#editOverlay > * {
+    margin: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#editOverlay > * > input[type='text']{
+    width: fit-content;
+}
+
+#editTitleInput {
+    width: 78% !important; 
+}
+
+#editDescriptionInput {
+    width: 62% !important;
+}
+
+#editPriorityInputContainer,
+#editDueDateContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editButtonContainer {
+    display: flex;
+    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
 
 body {
     height: 100vh;

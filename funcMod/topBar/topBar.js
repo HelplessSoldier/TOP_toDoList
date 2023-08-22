@@ -4,10 +4,10 @@ import { updateLocalStorage } from "../updateLocalStorage";
 import renderTodoItems from "../todoElement/renderTodoItems";
 import { removeChildren } from "../clearParent";
 
-function renderTopBar( todoParent, parent, array ) {
+function renderTopBar( todoParent, parent, array, root ) {
     const sideBarContainer = createElement('div', { id: 'sideBarContainer' }, '');
 
-    const siteTitle = createElement('h1', { id: 'siteTitle' }, 'HS Todo.')
+    const siteTitle = createElement('h1', { id: 'siteTitle' }, 'Todo.')
 
     const newItemButton = createElement('button', { id: 'newItemButton' }, 'New Task');
     newItemButton.addEventListener('click', () => {
@@ -42,11 +42,21 @@ function renderTopBar( todoParent, parent, array ) {
         renderTodoItems(todoParent, array);
     })
 
+    const toggleDarkModeButton = createElement('button', { id: 'darkModeToggle' }, 'Dark/Light Mode');
+    toggleDarkModeButton.addEventListener('click', () => {
+        if (root.getAttribute('data-theme') === 'light') {
+            root.setAttribute('data-theme', 'dark');
+        } else {
+            root.setAttribute('data-theme', 'light');
+        }
+    })
+
     sideBarContainer.append(
         siteTitle, 
         newItemButton, 
         sortByDateButton, 
-        sortByPriorityButton
+        sortByPriorityButton,
+        toggleDarkModeButton
         );
     parent.append(sideBarContainer);
 }

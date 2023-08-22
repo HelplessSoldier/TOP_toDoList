@@ -10,6 +10,7 @@ import { updateLocalStorage } from "../funcMod/updateLocalStorage";
 import { editItemDialogue } from "../funcMod/editItemDialogue";
 import  "./style.css";
 
+const root = document.documentElement;
 const rootElement = document.getElementById('content');
 const editPopup = document.getElementById('editOverlay');
 const newFolderPopup = document.getElementById('editOverlay');
@@ -24,7 +25,7 @@ for (let item of todoArrayJson) {
 }
 
 // place everything on screen
-renderTopBar(todoContainer, rootElement, todoArray);
+renderTopBar(todoContainer, rootElement, todoArray, root);
 // renderSidebar( rootElement );
 renderTodoItems(todoContainer, todoArray);
 

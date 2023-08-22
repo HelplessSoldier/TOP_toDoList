@@ -1,3 +1,3 @@
-export function removeChildren(parent){
-    parent.innerHTML = '';
+export function removeChildren(parent) {
+  parent.innerHTML = "";
 }

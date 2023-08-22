@@ -1,5 +1,6 @@
 import renderTodoItems from "../funcMod/todoElement/renderTodoItems";
-import renderTopBar from "../funcMod/sideBar/sideBar";
+import renderTopBar from "../funcMod/topBar/topBar";
+import renderSidebar from "../funcMod/sideBar/renderSidebar";
 import TodoItem from "../funcMod/todoElement/todoItem";
 import { createElement } from "../funcMod/createElement";
 import { removeChildren } from "../funcMod/clearParent";
@@ -22,6 +23,7 @@ for (let item of todoArrayJson) {
 
 // place everything on screen
 renderTopBar(todoContainer, rootElement, todoArray);
+renderSidebar( rootElement );
 renderTodoItems(todoContainer, todoArray);
 
 // remove todo item from array and local storage, then update Dom

@@ -2,6 +2,7 @@ import renderTodoItems from "../funcMod/todoElement/renderTodoItems";
 import renderTopBar from "../funcMod/topBar/topBar";
 import renderSidebar from "../funcMod/sideBar/renderSidebar";
 import TodoItem from "../funcMod/todoElement/todoItem";
+import renderNewFolderDialogue from "../funcMod/sideBar/newFolderDialogue/renderNewFolderDialogue";
 import { createElement } from "../funcMod/createElement";
 import { removeChildren } from "../funcMod/clearParent";
 import { getTodoArrayFromLocalStorage } from "../funcMod/getTodoArrayFromLocalStorage";
@@ -9,8 +10,9 @@ import { updateLocalStorage } from "../funcMod/updateLocalStorage";
 import { editItemDialogue } from "../funcMod/editItemDialogue";
 import  "./style.css";
 
-const editPopup = document.getElementById('editOverlay');
 const rootElement = document.getElementById('content');
+const editPopup = document.getElementById('editOverlay');
+const newFolderPopup = document.getElementById('editOverlay');
 const todoContainer = createElement('div', { id: 'todoContainer' }, '');
 rootElement.append(todoContainer);
 
@@ -23,7 +25,7 @@ for (let item of todoArrayJson) {
 
 // place everything on screen
 renderTopBar(todoContainer, rootElement, todoArray);
-renderSidebar( rootElement );
+// renderSidebar( rootElement );
 renderTodoItems(todoContainer, todoArray);
 
 // remove todo item from array and local storage, then update Dom
@@ -59,4 +61,9 @@ window.addEventListener('updateEvent', () => {
     removeChildren(todoContainer);
     updateLocalStorage(todoArray);
     renderTodoItems(todoContainer, todoArray);
+})
+
+// open new folder dialogue when new folder button pressed
+window.addEventListener('newFolderButtonPressed', () => {
+    renderNewFolderDialogue(newFolderPopup);
 })

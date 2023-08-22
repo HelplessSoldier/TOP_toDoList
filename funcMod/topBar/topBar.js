@@ -7,6 +7,8 @@ import { removeChildren } from "../clearParent";
 function renderTopBar( todoParent, parent, array ) {
     const sideBarContainer = createElement('div', { id: 'sideBarContainer' }, '');
 
+    const siteTitle = createElement('h1', { id: 'siteTitle' }, 'HS Todo.')
+
     const newItemButton = createElement('button', { id: 'newItemButton' }, 'New Task');
     newItemButton.addEventListener('click', () => {
         newItemButton.style.display = 'none';
@@ -40,7 +42,12 @@ function renderTopBar( todoParent, parent, array ) {
         renderTodoItems(todoParent, array);
     })
 
-    sideBarContainer.append(newItemButton, sortByDateButton, sortByPriorityButton);
+    sideBarContainer.append(
+        siteTitle, 
+        newItemButton, 
+        sortByDateButton, 
+        sortByPriorityButton
+        );
     parent.append(sideBarContainer);
 }
 

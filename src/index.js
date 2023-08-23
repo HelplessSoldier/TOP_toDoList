@@ -28,8 +28,8 @@ for (let item of todoArrayJson) {
 }
 
 // place everything on screen
-renderTopBar(todoContainer, rootElement, todoArray, root);
-renderSidebar(rootElement, folderArray);
+renderTopBar(todoContainer, rootElement, todoArray, root, todoArray);
+renderSidebar(rootElement, folderArray, todoArray, rootElement);
 renderTodoItems(todoContainer, todoArray);
 
 // remove todo item from array and local storage, then update Dom
@@ -74,6 +74,11 @@ window.addEventListener("newFolderButtonPressed", () => {
 
 // update folders on sidebar when new folder added
 window.addEventListener("folderCreated", () => {
-    console.log("triggered");
-    renderSidebar(rootElement, folderArray);
+    renderSidebar(rootElement, folderArray, todoArray, todoContainer);
+});
+
+window.addEventListener("folderSelected", (e) => {
+    let folder = e.detail;
+    todoArray = folder.items;
+    console.log(folder);
 });

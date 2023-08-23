@@ -2,7 +2,7 @@ import { removeChildren } from "../clearParent";
 import { createElement } from "../createElement";
 import renderFolderElement from "./newFolderDialogue/renderFolderElement";
 
-function renderSidebar(parent, folderArray) {
+function renderSidebar(parent, folderArray, todoArray, todoParent) {
     const sidebarContainer = createElement("div", { id: "sidebarContainer" }, "");
 
     const sideTitleContainer = createElement("div", { id: "sideTitleContainer" }, "");
@@ -15,12 +15,10 @@ function renderSidebar(parent, folderArray) {
 
     const folderContainer = createElement("div", { class: "folderContainer" }, "");
 
-    console.log(folderArray);
     if (folderArray) {
         removeChildren(folderContainer);
-        console.log("got into if statement");
         for (let folder of folderArray) {
-            renderFolderElement(folder, folderContainer);
+            renderFolderElement(folder, folderContainer, todoArray, todoParent);
         }
     }
 

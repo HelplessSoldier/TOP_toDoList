@@ -4,7 +4,7 @@ import { updateLocalStorage } from "../updateLocalStorage";
 import renderTodoItems from "../todoElement/renderTodoItems";
 import { removeChildren } from "../clearParent";
 
-function renderTopBar(todoParent, parent, array, root) {
+function renderTopBar(todoParent, parent, array, root, currentFolder) {
     const sideBarContainer = createElement("div", { id: "sideBarContainer" }, "");
 
     const siteTitle = createElement("h1", { id: "siteTitle" }, "Todo.");
@@ -12,7 +12,7 @@ function renderTopBar(todoParent, parent, array, root) {
     const newItemButton = createElement("button", { id: "newItemButton" }, "New Task");
     newItemButton.addEventListener("click", () => {
         newItemButton.style.display = "none";
-        openNewItemDialogue(todoParent, sideBarContainer, array, newItemButton);
+        openNewItemDialogue(todoParent, sideBarContainer, array, newItemButton, currentFolder);
     });
 
     const sortByDateButton = createElement("button", { id: "sortByDateButton" }, "Sort By Date");

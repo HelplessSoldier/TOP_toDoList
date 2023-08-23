@@ -15,7 +15,7 @@
     --text-color: #ffffff;
     --background-color: #141414;
     --primary-color: #b83d14;
-    --secondary-color: #00012b;
+    --secondary-color: #0e0e0e;
     --accent-color: #ca4316;
 }
 
@@ -24,7 +24,7 @@
     --text-color: #000000;
     --background-color: #fdf4f1;
     --primary-color: #b83d14;
-    --secondary-color: #00012b;
+    --secondary-color: #ebebeb;
     --accent-color: #ca4316;
 }
 
@@ -41,7 +41,8 @@
     transform: translate(-50%, -50%);
     background-color: var(--background-color);
     padding: 20px;
-    border: 10px solid var(--accent-color);
+    border: 5px solid var(--accent-color);
+    border-radius: 10px;
     z-index: 1001;
 }
 
@@ -105,6 +106,7 @@ button {
 button:hover {
     cursor: pointer;
     background: var(--accent-color);
+    color: var(--button-text-color);
 }
 
 input[type="text"] {
@@ -188,7 +190,6 @@ input[type="radio"]:checked {
     grid-column: 1 / span 3;
     display: grid;
     grid-template-columns: 2fr repeat(9, 1fr);
-    /* background-color: var(--secondary-color); */
     padding: 10px;
     gap: 10px;
     border-bottom: 3px solid var(--accent-color);
@@ -256,7 +257,6 @@ input[type="radio"]:checked {
     border: 1px solid var(--accent-color);
     border-top: 20px solid var(--primary-color);
     border-radius: 0 0 20px 20px;
-
     margin-top: 20px;
     margin-left: 10px;
     margin-right: 10px;
@@ -303,7 +303,7 @@ input[type="radio"]:checked {
 }
 
 .buttonContainer {
-    margin-bottom: 10px;
+    padding: 10px;
 }
 
 #sidebarContainer {
@@ -328,4 +328,24 @@ input[type="radio"]:checked {
 
 #newFolderButton {
     margin: 30px;
+}
+
+.folderContainer {
+    font-family: "Inter";
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.folderTitle {
+    width: calc(100% - 13px);
+    height: 100%;
+    margin: 0;
+    padding: 10px;
+}
+
+.folderTitle:hover {
+    border-right: 3px solid var(--accent-color);
+    background-color: var(--secondary-color);
 }

@@ -3,7 +3,7 @@ import createNewTodoItem from "../todoElement/newTodoItem";
 import renderTodoItems from "../todoElement/renderTodoItems";
 import { removeChildren } from "../clearParent";
 
-function openNewItemDialogue(todoParent, parent, array, newItemButton) {
+function openNewItemDialogue(todoParent, parent, array, newItemButton, currentFolder) {
     const newItemDialogueContainer = createElement("div", { id: "newItemDialogueContainer" }, "");
 
     // title input field
@@ -95,7 +95,8 @@ function openNewItemDialogue(todoParent, parent, array, newItemButton) {
                     titleInput.value,
                     descriptionInput.value,
                     dueDateInput.value,
-                    priorityValue
+                    priorityValue,
+                    currentFolder
                 );
 
                 removeChildren(todoParent);

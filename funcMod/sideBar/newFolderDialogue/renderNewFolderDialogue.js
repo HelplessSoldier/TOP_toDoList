@@ -14,10 +14,15 @@ function renderNewFolderDialogue(newFolderParent, folderArray) {
     const submitFolderButton = createElement("button", { id: "submitFolderButton" }, "Submit");
     submitFolderButton.addEventListener("click", () => {
         if (newFolderName.value) {
+            // create folder and add to the folder array
             const newFolder = new Folder(newFolderName.value);
             folderArray.push(newFolder);
+
+            // send folderCreated to window on submit
             const folderCreatedEvent = new CustomEvent("folderCreated");
             window.dispatchEvent(folderCreatedEvent);
+
+            // clear field and hide popup
             newFolderParent.style.display = "none";
             newFolderName.value = "";
         }
@@ -26,6 +31,7 @@ function renderNewFolderDialogue(newFolderParent, folderArray) {
     cancelButton.addEventListener("click", () => {
         newFolderParent.style.display = "none";
     });
+
     folderInputContainer.append(newFolderLabel, newFolderName, submitFolderButton, cancelButton);
     newFolderContainer.append(folderInputContainer);
     newFolderParent.append(newFolderContainer);

@@ -1,3 +1,3 @@
 export function updateLocalStorage(array) {
-  localStorage.setItem("todoArray", JSON.stringify(array));
+    localStorage.setItem("todoArray", JSON.stringify(array));
 }

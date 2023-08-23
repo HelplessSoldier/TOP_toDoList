@@ -11,320 +11,321 @@
 } */
 
 :root {
-  --button-text-color: rgb(0, 0, 0);
-  --text-color: #ffffff;
-  --background-color: #141414;
-  --primary-color: #b83d14;
-  --secondary-color: #00012b;
-  --accent-color: #ca4316;
+    --button-text-color: rgb(0, 0, 0);
+    --text-color: #ffffff;
+    --background-color: #141414;
+    --primary-color: #b83d14;
+    --secondary-color: #00012b;
+    --accent-color: #ca4316;
 }
 
 [data-theme="light"] {
-  --button-text-color: white;
-  --text-color: #000000;
-  --background-color: #fdf4f1;
-  --primary-color: #b83d14;
-  --secondary-color: #00012b;
-  --accent-color: #ca4316;
+    --button-text-color: white;
+    --text-color: #000000;
+    --background-color: #fdf4f1;
+    --primary-color: #b83d14;
+    --secondary-color: #00012b;
+    --accent-color: #ca4316;
 }
 
 #editOverlay {
-  display: grid;
-  grid-template-rows: repeat(5, 1fr);
-  align-items: center;
-  justify-content: center;
-  color: var(--text-color);
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--background-color);
-  padding: 20px;
-  border: 10px solid var(--accent-color);
-  z-index: 1001;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--background-color);
+    padding: 20px;
+    border: 10px solid var(--accent-color);
+    z-index: 1001;
 }
 
 .editLabel {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 #editOverlay > * {
-  margin: 10px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+    margin: 10px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 #editOverlay > * > input[type="text"] {
-  width: fit-content;
+    width: fit-content;
 }
 
 #editTitleInput {
-  width: 78% !important;
+    width: 78% !important;
 }
 
 #editDescriptionInput {
-  width: 62% !important;
+    width: 62% !important;
 }
 
 #editPriorityInputContainer,
 #editDueDateContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .editButtonContainer {
-  display: flex;
-  padding-top: 20px;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 body {
-  height: 100vh;
-  width: 100vw;
-  margin: 0px;
-  padding: 0px;
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
 }
 
 button {
-  color: var(--button-text-color);
-  font-family: "Inter", sans-serif;
-  font-size: 21px;
-  letter-spacing: 2px;
-  padding: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-  border: none;
-  border-radius: 34px;
-  background: var(--primary-color);
+    color: var(--text-color);
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 3px solid var(--accent-color);
+    border-radius: 34px;
+    background: var(--background-color);
 }
 
 button:hover {
-  cursor: pointer;
-  background: var(--accent-color);
+    cursor: pointer;
+    background: var(--accent-color);
 }
 
 input[type="text"] {
-  color: var(--text-color);
-  font-family: "Inter", sans-serif;
-  font-size: large;
-  background-color: var(--background-color);
-  border: 2px solid var(--accent-color);
-  border-radius: 10px;
-  padding: 10px;
+    color: var(--text-color);
+    font-family: "Inter", sans-serif;
+    font-size: large;
+    background-color: var(--background-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    padding: 10px;
 }
 
 input[type="text"]:focus {
-  border: 2px solid var(--accent-color);
-  outline: none;
+    border: 2px solid var(--accent-color);
+    outline: none;
 }
 
 input[type="date"] {
-  color: var(--text-color);
-  font-family: "Inter", sans-serif;
-  font-size: large;
-  background-color: var(--background-color);
-  border: 2px solid var(--accent-color);
-  border-radius: 10px;
-  padding: 10px;
+    color: var(--text-color);
+    font-family: "Inter", sans-serif;
+    font-size: large;
+    background-color: var(--background-color);
+    border: 2px solid var(--accent-color);
+    border-radius: 10px;
+    padding: 10px;
 }
 
 input[type="date"]:focus {
-  border: 2px solid var(--accent-color);
-  outline: none;
+    border: 2px solid var(--accent-color);
+    outline: none;
 }
 
 /* Style for radio buttons */
 input[type="radio"] {
-  appearance: none;
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  background-color: var(--text-color);
-  border-radius: 5px;
-  margin-right: 5px;
-  vertical-align: middle;
-  cursor: pointer;
+    appearance: none;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: var(--text-color);
+    border-radius: 5px;
+    margin-right: 5px;
+    vertical-align: middle;
+    cursor: pointer;
 }
 
 input[type="radio"]:checked {
-  background-color: var(--accent-color);
-  border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 .radio-label {
-  vertical-align: middle;
-  font-family: "Inter", sans-serif;
-  font-size: large;
-  color: var(--text-color);
+    vertical-align: middle;
+    font-family: "Inter", sans-serif;
+    font-size: large;
+    color: var(--text-color);
 }
 
 #content {
-  display: grid;
-  height: 100vh;
-  width: 100vw;
-  margin: 0px;
-  padding: 0px;
-  grid-template-rows: 1fr 6fr 4fr;
-  grid-template-columns: 1fr 5fr;
-  background-color: var(--background-color);
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    grid-template-rows: 1fr 6fr 4fr;
+    grid-template-columns: 1fr 5fr;
+    background-color: var(--background-color);
 }
 
 #menuItemButton {
-  grid-column: 1;
-  height: 70%;
+    grid-column: 1;
+    height: 70%;
 }
 
 #sideBarContainer {
-  color: var(--text-color);
-  font-family: "Inter", sans-serif;
-  letter-spacing: 2px;
-  font-size: large;
-  font-weight: 1000;
-  grid-row: 1;
-  grid-column: 1 / span 3;
-  display: grid;
-  grid-template-columns: 2fr repeat(9, 1fr);
-  /* background-color: var(--secondary-color); */
-  padding: 10px;
-  gap: 10px;
-  /* border-bottom: 5px solid var(--accent-color); */
+    color: var(--text-color);
+    font-family: "Inter", sans-serif;
+    letter-spacing: 2px;
+    font-size: large;
+    font-weight: 1000;
+    grid-row: 1;
+    grid-column: 1 / span 3;
+    display: grid;
+    grid-template-columns: 2fr repeat(9, 1fr);
+    /* background-color: var(--secondary-color); */
+    padding: 10px;
+    gap: 10px;
+    border-bottom: 3px solid var(--accent-color);
 }
 
 #newItemButton {
-  grid-column: 7;
-  grid-row: 1;
+    grid-column: 7;
+    grid-row: 1;
 }
 
 #sortByDateButton {
-  grid-column: 8;
-  grid-row: 1;
+    grid-column: 8;
+    grid-row: 1;
 }
 
 #sortByPriorityButton {
-  grid-column: 9;
-  grid-row: 1;
+    grid-column: 9;
+    grid-row: 1;
 }
 
 #darkModeToggle {
-  grid-column: 10;
+    grid-column: 10;
 }
 
 #siteTitle {
-  margin: 0%;
-  padding: 0%;
-  font-size: 55px;
-  font-weight: 1000;
-  justify-self: center;
-  align-self: center;
-  color: var(--text-color);
+    margin: 0%;
+    padding: 0%;
+    font-size: 55px;
+    font-weight: 1000;
+    justify-self: center;
+    align-self: center;
+    color: var(--text-color);
 }
 
 #newItemDialogueContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 10px;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  grid-column: 1 / span 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / span 10;
 }
 
 #todoContainer {
-  grid-column: 1 / span 2;
-  grid-row: 2 / span 2;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  overflow: auto;
-  margin-left: 20px;
-  margin-right: 20px;
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 2;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow: auto;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #titleInput,
 #descriptionInput {
-  width: 80%;
+    width: 80%;
 }
 
 .todoElement {
-  flex: 1 1 calc(20% - 10px);
-  color: var(--text-color);
-  background-color: var(--background-color);
-  border: 1px solid var(--accent-color);
-  border-top: 20px solid var(--primary-color);
-  border-radius: 20px;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    flex: 1 1 calc(20% - 10px);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--accent-color);
+    border-top: 20px solid var(--primary-color);
+    border-radius: 0 0 20px 20px;
+
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .todoElement > button {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .todoTitle {
-  border-bottom: 3px solid var(--accent-color);
-  font-size: 35px;
-  margin: 0px;
-  margin-top: 10px;
-  /* letter-spacing: 2px; */
+    border-bottom: 3px solid var(--accent-color);
+    font-size: 35px;
+    margin: 0px;
+    margin-top: 10px;
+    /* letter-spacing: 2px; */
 }
 
 .todoDescription {
-  /* letter-spacing: 1px; */
-  font-weight: 500;
-  font-size: 21px;
+    /* letter-spacing: 1px; */
+    font-weight: 500;
+    font-size: 21px;
 }
 
 .todoDueDate {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .todoPriority {
-  margin-top: 0px;
+    margin-top: 0px;
 }
 
 #priorityInputContainer {
-  display: flex;
-  flex-direction: row;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  gap: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 10px;
 }
 
 .buttonContainer {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 #sidebarContainer {
-  color: var(--text-color);
-  background-color: var(--background-color);
-  border-right: 5px solid var(--accent-color);
-  grid-column: 1;
-  grid-row: 2 / span 2;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border-right: 5px solid var(--accent-color);
+    grid-column: 1;
+    grid-row: 2 / span 2;
 }
 
 #sideTitleContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 3px solid var(--accent-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3px solid var(--accent-color);
 }
 
 #sideTitle {
-  margin-left: 20px;
+    margin-left: 20px;
 }
 
 #newFolderButton {
-  margin: 30px;
+    margin: 30px;
 }
